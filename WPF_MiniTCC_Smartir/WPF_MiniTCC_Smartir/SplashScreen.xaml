@@ -1,0 +1,35 @@
+﻿<Window x:Class="WPF_MiniTCC_Smartir.SplashScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_MiniTCC_Smartir"
+        mc:Ignorable="d"
+        Title="SplashScreen" 
+        Height="720" Width="1280"
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="CanMinimize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent" Icon="/Imagens/Icone Smart Air.png">
+
+    <Window.Resources>
+        <!-- Definir o storyboard de animação de fade-out do retângulo preto -->
+        <Storyboard x:Key="FadeOutAnimation">
+            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                             From="1" To="0"
+                             Duration="0:0:2" />
+            <!-- Duração de 2 segundos -->
+        </Storyboard>
+    </Window.Resources>
+
+    <Grid Background="#FF0F1923">
+        <!-- Logo da empresa -->
+        <Image x:Name="img" HorizontalAlignment="Left" Height="124" VerticalAlignment="Top" Width="476" 
+               Source="/Imagens/SmartAir Logo Light.png" Margin="380,280,0,0" RenderOptions.BitmapScalingMode="HighQuality"/>
+
+        <!-- Retângulo preto para o fade-in (começa opaco) -->
+        <Rectangle x:Name="blackOverlay" Fill="Black" Opacity="1"/>
+
+    </Grid>
+</Window>
