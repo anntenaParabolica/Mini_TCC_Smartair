@@ -1,0 +1,70 @@
+﻿<Window x:Class="WPF_MiniTCC_Smartir.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_MiniTCC_Smartir"
+        mc:Ignorable="d"
+     Title="SmartAir - Login" Height="720" Width="1280" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Imagens/Icone Smart Air.png">
+
+    <Window.Resources>
+        <Style x:Key="EstiloBtnLogar" TargetType="Button">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                        <GradientStop Color="#FF1AA1F1" Offset="0"/>
+                        <GradientStop Color="#FF57C8F6" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderThickness="5"
+                            CornerRadius="12"
+                                Padding="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <!-- Estilização do Botão -->
+
+    <Grid Background="Black">
+        <Image HorizontalAlignment="Center" Height="720" VerticalAlignment="Top" Source="/Imagens/BackgroundGradiente.png" Width="1280" Margin="0,0,0,0"/>
+        <!-- IMG Degrade Background -->
+
+        <Border Background="#f5f5f5" CornerRadius="20" BorderThickness="2" Margin="381,174,381,174">
+            <!-- Fundo Branco -->
+            <Label Content="LOGIN" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16" Margin="0,123,0,0" Foreground="#FF0F1923"/>
+        </Border>
+
+
+        <!--  Contéudo do Formulário-->
+        <Image x:Name="img" HorizontalAlignment="Center" Height="45" VerticalAlignment="Top" Width="188" 
+         Source="/Imagens/SmartAir DarkSIMPLE.png" Margin="0,242,0,0" RenderOptions.BitmapScalingMode="HighQuality"/>
+        <Label Content="ID" HorizontalAlignment="Left" Height="40" Margin="535,314,0,0" VerticalAlignment="Top" Width="115" Foreground="Gray"/>
+        <Label Content="SENHA" HorizontalAlignment="Left" Height="40" Margin="535,374,0,0" VerticalAlignment="Top" Width="115" Foreground="Gray"/>
+
+        <!-- TEXT BOX-->
+        <TextBox x:Name="txtID"  HorizontalAlignment="Center" Margin="0,332,0,331" Width="210"  Padding="0, -5, 0, -15"  FontSize="16" BorderBrush="#0F1923" BorderThickness="0, 0, 0, 3" RenderTransformOrigin="0.6,1.413" TextChanged="txtID_TextChanged"  PreviewTextInput="IdTextBox_PreviewTextInput" MaxLength="3">
+            <TextBox.Background>
+                <ImageBrush ImageSource="/Imagens/user2.png" Stretch="Uniform" AlignmentX="Left" RenderOptions.BitmapScalingMode="HighQuality"/>
+            </TextBox.Background>
+        </TextBox>
+        <PasswordBox x:Name="pswSenha"  HorizontalAlignment="Center" Margin="0,393,0,270" Width="210" Padding="0, -5, 0, -10"  FontSize="16" BorderBrush="#0F1923" BorderThickness="0, 0, 0, 3" RenderTransformOrigin="0.6,1.413" PasswordChanged="pswSenha_PasswordChanged" MaxLength="20">
+            <PasswordBox.Background>
+                <ImageBrush ImageSource="/Imagens/key.png" Stretch="Uniform" AlignmentX="Left" RenderOptions.BitmapScalingMode="HighQuality"/>
+            </PasswordBox.Background>
+        </PasswordBox>
+
+        <!-- Botão -->
+        <Button x:Name="btnLogar" Content="Logar" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource EstiloBtnLogar}" Click="btnLogar_Click" Width="100" Height="52" Margin="0,433,0,0" FontWeight="Bold" Cursor="Hand"/>
+        <Button Content="-->" HorizontalAlignment="Left" Margin="1146,621,0,0" VerticalAlignment="Top" Click="Button_Click_1" FontSize="20" RenderTransformOrigin="0.868,4.823" />
+
+    </Grid>
+</Window>
